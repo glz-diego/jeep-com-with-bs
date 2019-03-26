@@ -1,10 +1,30 @@
 .button:hover{
 	background-color: white;
 }
-.font:hover{
+.button:hover .font{
 	color: black;
 }
 .jv{
-	width: 205px;
-	height: 95px;
+	width: 405px;
+}
+.jvh{
+	font-weight: bold;
+	font-size: 45px;
+}
+.r{
+	font-weight: normal;
+	padding-top: 10px;
+	font-size: 10px;
+}
+a{
+	text-decoration-line: none;
+}
+#logo{
+	width: 175px; margin: 15px 30px
+}
+.dd{
+	padding: 40px; margin: 0;
+}
+.ddi{
+	background-color: white; position: relative; left: -16px; width: 1000px
 }
