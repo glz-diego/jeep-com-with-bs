@@ -1,135 +1,550 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	</head>
-	<body style="text-decoration: none;">
-		<nav class="navbar" style="background-color:black;">
-	 		<a class="navbar-brand" href="#"><img id="logo" src="img/logo-jeep.png"></a>
-	 		<div>
-				<button class="navbar-toggler navbar-toggler-right button dd" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-					<font class="font" color="white" size="6px" style="font-weight: bold;">VEHICLES <i class="fas fa-angle-down"></i></font>
-				</button>
-				<button class="navbar-toggler navbar-toggler-right button dd" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-					<font class="font" color="white" size="6px">MENU <i class="fas fa-bars"></i></font>
-				</button>
-			</div>
-			<div class="collapse navbar-collapse ddi" id="navbarTogglerDemo01">
-				<ul class="navbar-nav mr-auto mt-2 mt-md-0">
-					<li style="font-size: 45px; padding: 60px 0px 60px 2%; border-bottom: 5px solid lightgray;"><strong style="color: black;">STANDARD MODELS</strong></li>
-					
-					<a href="https://www.jeep.com/wrangler.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray; flex-wrap: wrap;"><img src="img/Wrangler.jpg" style="float: left; width: 400px;"><div style=" color: black; font-weight: bold;">ALL-NEW WRANGLER <span style="color: gray; font-size: 25px;"><p>UNMATCHED CAPABILITY </p><p>MSRP* STARTING AT </p></span> $27,945<i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 120px; right: 20px"></i></div></li></a>
-					
-					<a href="https://www.jeep.com/grand-cherokee.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Summit_FlyOut.png" style="float: left; width: 400px;"><div style="font-weight: bold; color: black;">GRAND CHEROKEE <span style="color: gray; font-size: 25px;"><p>THE MOST AWARDED SUV EVER </p><p>MSRP* STARTING AT</p></span>$31,945</div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 120px; right: 20px"></i></li></a>
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/fpi8zkf.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg font-weight-bold p-0 d-flex justify-content-end justify-content-lg-start">
+        <div id="logo" class="d-inline-flex mr-auto align-items-center"><img class="w-100 p-3" src="logo.png" ></div>
+        <a href="#" class="py-sm-3"><div class="m-2 p-1 chevron">VEHICLES</div></a>
+        <a href="#" class="py-sm-3 d-none d-sm-block d-lg-none"><div class="m-2 p-1 chevron">SHOPPING TOOLS</div></a>
+        <a href="#" class="py-sm-3 d-none d-sm-block d-lg-none"><div class="m-2 p-1 chevron">CAPABILITY</div></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="menu fz-12 p-1 navbar-toggler-icon">MENU</div>
+        </button>
+        <div class="collapse navbar-collapse align-items-center" id="navbarNav">
+            <a href="#" class="py-3"><div class="d-sm-none d-lg-block m-2 p-1 chevron">SHOPPING TOOLS</div></a>
+            <a href="#" class="py-3"><div class="d-sm-none d-lg-block m-2 p-1 chevron">CAPABILITY</div></a>
+            <a href="#" class="py-3"><div class="m-2 p-1">JEEP<sub>®</sub> LIFE</div></a>
+            <a href="#" class="py-3"><div class="m-2 p-1 chevron">OWNERS</div></a>
+            <a href="#" class="py-3"><div class="m-2 p-1 external">MERCHANDISE</div></a>
+        </div>
+        <div class="d-none d-xl-flex my-1 ml-auto">
+            <div class="border-left align-items-center m-4">|</div>
+            <a href="#" class="d-inline-flex align-items-center globe"><div class="mr-4 fz-12 font-weight-normal">Español</div></a>
+            <a href="#" class="d-inline-flex align-items-center marker"><div class="mr-4">FIND A<br>DEALER</div></a>
+            <a href="#" class="d-inline-flex align-items-center wrench"><div class="mr-4">BUILD &<br>PRICE</div></a>
+        </div>
+    </nav>
 
-					<a href="https://www.jeep.com/cherokee.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Global_Nav1.jpg" style="float: left; width: 400px;"><div style="font-weight: bold; color: black;">CHEROKEE <span style="color: gray; font-size: 25px;"><p>REIMAGINED FOR EVERYDAY ADVENTURES</p><p>MSRP* STARTING AT</p></span>$25,490</div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 120px; right: 20px"></i></li></a>
-				
-					<a href="https://www.jeep.com/compass.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Compass.jpg" style="float: left; width: 400px;"><div style="font-weight: bold; color: black;">COMPASS <span style="color: gray; font-size: 25px;"><p>MODERN ADVENTURE</p><p>MSRP* STARTING AT</p></span>$27,945</div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 120px; right: 20px"></i></li></a>
-					
-					<a href="https://www.jeep.com/renegade.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Renegade.jpg" style="float: left; width: 400px;"><div style="font-weight: bold; color: black;">RENEGADE <span style="color: gray; font-size: 25px;"><p>LIVE RENEGADE</p><p>MSRP* STARTING AT</p></span>$27,945</div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 120px; right: 20px"></i></li></a>
-					
-					<a href="https://www.jeep.com/gladiator.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Gladiator-Blue.png" style="float: left; width: 400px;"><div><a style="font-weight: bold; color: black;">ALL-NEW GLADIATOR</a><span style="color: gray; font-size: 25px;"><p>COMING SPRING 2019</p></span></div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 35px; right: 20px"></i></li></a>
-					
-					<li style="font-size: 45px; padding: 60px 0px 60px 2%; width: 100vw; color: black; border-bottom: 1px solid gray;"><strong>LIMITED EDITION MODELS</strong></li>
-					
-					<a href="https://www.jeep.com/limited-editions/2019/grand-cherokee.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Summit_FlyOut.png" style="float: left; width: 400px;"><div><a style="font-weight: bold; color: black;">GRAND CHEROKEE</a><span style="color: gray; font-size: 25px;"><p>4 MODELS AVAILABLE</p></span></div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 35px; right: 20px"></i></li></a>
-					
-					<a href="https://www.jeep.com/limited-editions/2018/renegade.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Renegade.jpg" style="float: left; width: 400px;"><div><a style="font-weight: bold; color: black;">RENEGADE</a><span style="color: gray; font-size: 25px;"><p>2 MODELS AVAILABLE</p></span></div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 35px; right: 20px"></i></li></a>
-					
-					<a href="https://www.jeep.com/limited-editions/2019/cherokee.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Global_Nav1.jpg" style="float: left; width: 400px;"><div><a style="font-weight: bold; color: black;">CHEROKEE</a><span style="color: gray; font-size: 25px;"><p>2 MODELS AVAILABLE</p></span></div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 35px; right: 20px"></i></li></a>
-					
-					<a href="https://www.jeep.com/limited-editions/2018/wrangler/moab.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Wrangler.jpg" style="float: left; width: 400px;"><div><a style="font-weight: bold; color: black;">WRANGLER</a><span style="color: gray; font-size: 25px;"><p>1 MODEL AVAILABLE</p></span></div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 35px; right: 20px"></i></li></a>
-					
-					<a href="https://www.jeep.com/compass.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;"><img src="img/Compass.jpg" style="float: left; width: 400px;"><div><a style="font-weight: bold; color: black;">COMPASS</a><span style="color: gray; font-size: 25px;"><p>3 MODELS AVAILABLE</p></span></div><i class="fas fa-chevron-right" style="float: right; color: #EDAD01; position: relative; bottom: 35px; right: 20px"></i></li></a>
-				</ul>
-			</div>
-			<div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="background-color: white; position: relative; left: -16px;">
-				<ul style="list-style: none;">
-					<a href="https://www.jeep.com/#app-bmo" style=" color: black; font-weight: bold;"><li style=" padding: 10px 0px 10px 2%;"><button type="button" class="btn" style="background-color: #EDAD01; width: 800px; font-size: 30px; font-weight: bold;"><i class="fas fa-wrench"> BUILD & PRICE</i></button></li></a>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="carousel_1_mobile.jpg" class="d-block w-100 d-sm-none">
+                <img src="carousel_1_portrait.jpg" class="w-100 d-none d-sm-block d-lg-none">
+                <img src="carousel_1.jpg" class="w-100 d-none d-lg-block">
+                <div class="carousel-caption slide1 d-none d-lg-inline">
+                        <img src="freedom.png" class="m-3 w-25">
+                        <div class="ft-pn font-weight-bold m-2 fz-25">NOW GET</div>
+                        <div class="mt-3 justify-content-center d-flex">
+                            <div class="ft-pn text-center font-weight-bold fz-25">NO MONTHLY <br> PAYMENT FOR <br> 90 DAYS</div>
+                            <div class="mx-5 lh-15">|<br>PLUS <br>|</div>
+                            <div class="ft-pn text-center font-weight-bold fz-25">AN ADDITIONAL <br> $500 <br> BONUS CASH</div>
+                        </div>
+                        <div class="fz-14 m-2">ON BEST-SELLING JEEP<sub>®</sub> VEHICLES</div>
+                        <button type="button" class="btn px-4 py-2 m-3 btn-warning">VIEW INCENTIVES AND OFFERS</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="carousel_2_mobile.jpg" class="d-block w-100 d-sm-none">
+                <img src="carousel_2_portrait.jpg" class="w-100 d-none d-sm-block d-lg-none">
+                <img src="carousel_2.jpg" class="w-100 d-none d-lg-block">
+                <div class="carousel-caption justify-content-start text-left slide2 my-5 mr-auto bg-transparent d-none d-lg-block">
+                        <img class="my-3" src="motortrend.png">
+                        <div class="fz-25">Now get the award-winning All-New 2019 Jeep<sub>®</sub> <br> Wrangler 4-DOOR Sport for $299/month for 48 <br> months 
+                        <div class="fz-14">$3,599 Due at lease signing. No security deposit required.</div>
+                        <button type="button" class="btn px-4 py-2 my-3 btn-warning">VIEW THE 2019 WRANGLER</div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
-					<a href="https://www.jeep.com/#app-dealer" style=" color: black; font-weight: bold;"><li style=" padding: 10px 0px 10px 2%;"><button type="button" class="btn" style="background-color: #4F4F4F; width: 800px; font-size: 30px; font-weight: bold;"><i class="fas fa-map-marker-alt"> FIND A DEALER</i></li></a>
+    <div class="container-fluid pt-4 bg-white">
+        <div id="vehicle_title">JEEP<sub>®</sub> VEHICLES</div>
+        <div class="row px-2 pb-5">    
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card mt-2">
+                    <img src="mug_1.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">ALL-NEW WRANGLER</h5>
+                        <p class="card-text"><small class="text-muted">MSRP* STARTING AT</small></p>
+                        <p class="card-text">$27,945</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card mt-2">
+                    <img src="mug_2.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">GRAND CHEROKEE</h5>
+                        <p class="card-text"><small class="text-muted">MSRP* STARTING AT</small></p>
+                        <p class="card-text">$31,945</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card mt-2">
+                    <img src="mug_3.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">CHEROKEE</h5>
+                        <p class="card-text"><small class="text-muted">MSRP* STARTING AT</small></p>
+                        <p class="card-text">$25,245</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card mt-2">
+                    <img src="mug_4.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">COMPASS</h5>
+                        <p class="card-text"><small class="text-muted">MSRP* STARTING AT</small></p>
+                        <p class="card-text">$21,845</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card mt-2">
+                    <img src="mug_5.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">RENEGADE</h5>
+                        <p class="card-text"><small class="text-muted">MSRP* STARTING AT</small></p>
+                        <p class="card-text">$18,750</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="card mt-2">
+                    <img src="mug_6.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">ALL-NEW GLADIATOR<br>COMING SPRING 2019</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row grey p-2">
+            <div class="col-12 p-2 col-md-6 col-lg-4">
+                <div class="card ">
+                    <div class="card-top card-1"></div>
+                    <div class="card-body text-left px-4 py-3">
+                        <b>2019 JEEP<sub>®</sub> COMPASS LATITUDE</b> <br>
+                        Now get no monthly payments for 90 days plus an additional $500 bonus cash in addition to qualifying offers.
+                    </div>
+                    <div class="card-footer text-right p-1">EXPLORE THE 2019 JEEP<sub>®</sub> COMPASS</div>
+                </div>
+            </div>
+            <div class="col-12 p-2 col-md-6 col-lg-4">
+                <div class="card rounded-0">
+                    <div class="card-top card-2"></div>
+                    <div class="card-body text-left px-4 py-3">
+                        <b>2019 JEEP<sub>®</sub> GRAND CHEROKEE LAREDO</b><br>
+                        Now get no monthly payments for 90 days plus an additional $500 bonus cash in addition to qualifying offers.
+                    </div>
+                    <div class="card-footer text-right p-1">DISCOVER THE 2019 JEEP<sub>®</sub> GRAND CHEROKEE</div>
+                </div>
+            </div>
+            <div class="col-12 p-2 col-lg-4">
+                <div class="card rounded-0">
+                    <div class="card-top card-3"></div>
+                    <div class="card-body text-left px-4 py-3">
+                        <b>2019 JEEP® CHEROKEE LATITUDE PLUS</b><br>
+                        Now get no monthly payments for 90 days plus an additional $500 bonus cash in addition to qualifying offers.
+                    </div>
+                    <div class="card-footer text-right p-1">DISCOVER THE 2019 JEEP<sub>®</sub> CHEROKEE</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-					<a href="#" style=" color: black; font-weight: bold;"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;">SHOPPING TOOLS</li></a>
+    <div class="container-fluid lightgrey px-5 py-5">
+        <div class="row">
+            <div class="col-lg-7">
+                <h3 class="mx-2 mt-5">MAKE THEM LOOK TWICE <br> WITH THE JEEP<sub>®</sub> GRAPHICS STUDIO</h3>
+                <button type="button" class="btn px-4 py-2 mx-3 btn-warning">START CUSTOMIZING NOW</button>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <img src="customize.png">
+            </div>
+        </div>
+    </div>
 
-					<a href="#" style=" color: black; font-weight: bold;"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;">CAPABILITY</li></a>
+    <div class="grey">
+        <div class="container p-4">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-2 d-flex justify-content-center">
+                    <img src="kelley.png" class="kelley">
+                </div>
+                <div class="col-lg-7 text-center text-lg-left">
+                    <h2 class="font-weight-bold">SEE YOUR VEHICLE’S TRADE-IN VALUE</h2>
+                    <p class="m-1 text-dark fz-14">Find out how much your current vehicle is worth from the independent Kelley Blue Book (KBB). KBB bases their values based on actual transactions and adjusts them as market conditions change.</p>
+                    <button type="button" class="btn my-3 col-12 col-sm-6 px-4 py-2 btn-warning">CHECK YOUR TRAID-IN VALUE</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-					<a href="https://www.jeep.com/jeep-life.html" style=" color: black; font-weight: bold;"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;">JEEP LIFE</li></a>
+    <div class="dark-grey">
+        <div class="container-fluid py-4 px-5">
+            <div class="row">
+                <div class="container-fluid m px-5 col-12 col-lg-8">
+                    <div class="row my-2 fz-14 align-items-center">
+                        <div class="col-6 col-sm-4 col-lg-auto py-2 px-0 mx-lg-4"><img src="automobility.png"></div>
+                        <div class="col-6 col-sm-4 col-lg-auto py-2 px-0 mx-lg-4"><i class="fas fa-globe-americas mr-2"></i> Find Your Country</div>
+                        <div class="col-6 col-sm-4 col-lg-auto py-2 px-0 mx-lg-4">Contact Us</div>
+                        <div class="col-6 col-sm-4 col-lg-auto py-2 px-0 mx-lg-4">Site Map</div>
+                        <div class="col-6 col-sm-4 col-lg-auto py-2 px-0 mx-lg-4">Careers</div>
+                        <div class="col-6 col-sm-4 col-lg-auto py-2 px-0 mx-lg-4">Español</div>
+                    </div>
+                </div>
+                <div class="container m-0 col-12 pl-0 col-lg-4">
+                    <div class="input-group col-12 col-md-6 pl-0 col-lg-12 m-3">
+                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn bg-warning fz-12 px-4 rounded-right btn-outline-secondary" type="button">SEARCH</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-					<a href="#" style=" color: black; font-weight: bold;"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;">OWNERS</li></a>
+    <div class="footer">
+        <div class="container-fluid px-5 px-0 py-4">
+            <div class="row pb-5 border-bottom">
 
-					<a href="https://www.gear.jeep.com/welcome.asp" style=" color: black; font-weight: bold;"><li style="font-size: 45px; padding: 10px 0px 10px 2%; border-bottom: 1px solid gray;">MERCHANDISE</li></a>
+                <div class="accordion p-0 col-12 d-sm-none" id="accordionEx">
+                    <div class="text-left border-bottom border-white card">
+                        <div class="card-header px-0 rounded-0" role="tab" id="headingOne1">
+                            <a data-toggle="collapse" href="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+                                <h5 class="my-1 fz-12 font-weight-bold chevron-l">VEHICLES</h5>
+                            </a>
+                        </div>
+                        <div id="collapseOne1" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne1">
+                            <div class="row my-3 card-body">
+                                <p class="col-6 my-1">Wrangler</p>
+                                <p class="col-6 my-1">Grand Cherokee</p>
+                                <p class="col-6 my-1">Cherokee</p>
+                                <p class="col-6 my-1">Renegade</p>
+                                <p class="col-6 my-1">Compass</p>
+                                <p class="col-6 my-1">Gladiator</p>
+                            </div>
+                        </div>
+                    </div>
 
-					<a href="https://www.jeep.com/#espanol" style=" color: black; font-weight: bold;"><li style="font-size: 45px; padding: 10px 0px 10px 2%;"><i class="fas fa-globe"> Español</i></li></a>
-				</ul>
-			</div>
-		</nav>
+                    <div class="text-left border-bottom border-white card">
+                        <div class="card-header px-0 rounded-0" role="tab" id="headingOne2">
+                            <a data-toggle="collapse" href="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                                <h5 class="my-1 fz-12 font-weight-bold chevron-l">COST</h5>
+                            </a>
+                        </div>
+                        <div id="collapseOne2" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne2">
+                            <div class="row my-3 card-body">
+                                <p class="col-6 my-1">View Incentives & Offers</p>
+                                <p class="col-6 my-1">National Incentives</p>
+                                <p class="col-6 my-1">Calculate Payment</p>
+                                <p class="col-6 my-1">Get a Quote</p>
+                                <p class="col-6 my-1">Apply for Credit</p>
+                                <p class="col-6 my-1">Get Prequalified</p>
+                            </div>
+                        </div>
+                    </div>
 
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img class="d-block w-100" src="img/mobile-v2.image.1000.jpg" alt="First slide">
-					<div class="carousel-caption d-none d-md-block">
-						<div style="background-color: rgba(0,0,0,0.6); position: relative; bottom: 950px; left: -50px; width: 1000px;" class="container-fluid">
-							<div class="row">
-								<div class=""></div>
-								<img src="img/freedom-days.png">
-							</div>
-							<div class="row" style="font-weight: bold; color: white; text-align: center;">NOW GET</div>
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img class="d-block w-100" src="img/Jeep2.jpg" alt="Second slide">
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
+                    <div class="text-left border-bottom border-white card">
+                        <div class="card-header px-0 rounded-0" role="tab" id="headingOne3">
+                            <a data-toggle="collapse" href="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+                                <h5 class="my-1 fz-12 font-weight-bold chevron-l">RESEARCH</h5>
+                            </a>
+                        </div>
+                        <div id="collapseOne3" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne3">
+                            <div class="row my-3 card-body">
+                                <p class="col-6 my-1">Adventure Reality</p>
+                                <p class="col-6 my-1">Build & Price</p>
+                                <p class="col-6 my-1">Compare Models</p>
+                                <p class="col-6 my-1">Get a Brochure</p>
+                                <p class="col-6 my-1">Sign Up for Updates</p>
+                            </div>
+                        </div>
+                    </div>
 
-		<div class="container-fluid">
-			<div class="row"><h1 class="jvh">JEEP<i class="far fa-registered r"></i> VEHICLES</h1></div>
-			<div class="row">
-				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-2">
-					<a href="https://www.jeep.com/wrangler.html"><li style="font-size: 45px; padding: 10px 0px 10px 2%;"><img class="jv" src="img/2018-Jeep-BHP-Jeep-Vehicles-Jellybean-Wrangler_V2.image.500.jpg" style="float: left; width: 400px;"><div style=" color: black; font-weight: bold;">ALL-NEW WRANGLER <span style="color: gray; font-size: 25px;"><p>MSRP* STARTING AT </p></span> $27,945</div></li></a>
-				</div>
-				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-2">
-					<img class="jv" src="img/2018-Jeep-BHP-Jeep-Vehicles-Jellybean-GrandCherokee_V2.image.500.jpg">
-				</div>
-				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-2">
-					<img class="jv" src="">
-				</div>
-				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-2">
-					<img class="jv" src="">
-				</div>
-				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-2">
-					<img class="jv" src="">
-				</div>
-				<div class="col-sm-6 col-md-5 col-lg-3 col-xl-2">
-					<img class="jv" src="">
-				</div>
-			</div>
-		</div>
+                        <div class="text-left border-bottom border-white card">
+                            <div class="card-header px-0 rounded-0" role="tab" id="headingOne4">
+                                <a data-toggle="collapse" href="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+                                    <h5 class="my-1 fz-12 font-weight-bold chevron-l">LOCATE</h5>
+                                </a>
+                            </div>
+                            <div id="collapseOne4" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne4">
+                                <div class="row my-3 card-body">
+                                    <p class="col-6 my-1">Search New Inventory</p>
+                                    <p class="col-6 my-1">Find a Dealer</p>
+                                    <p class="col-6 my-1">Schedule a Test Drive</p>
+                                </div>
+                            </div>
+                        </div>
 
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: rgb(237, 173, 1)">Search</button>
-	  		<button type="button" class="btn btn-secondary">Right</button>
-		</form>
-	</body>
+                        <div class="text-left border-bottom border-white card">
+                            <div class="card-header px-0 rounded-0" role="tab" id="headingOne5">
+                                <a data-toggle="collapse" href="#collapseOne5" aria-expanded="false" aria-controls="collapseOne5">
+                                    <h5 class="my-1 fz-12 font-weight-bold chevron-l">CAPABILITY</h5>
+                                </a>
+                            </div>
+                            <div id="collapseOne5" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne5">
+                                <div class="row my-3 card-body">
+                                    <p class="col-6 my-1">Trail Rated®</p>
+                                    <p class="col-6 my-1">4x4 Systems</p>
+                                    <p class="col-6 my-1">Towing</p>
+                                    <p class="col-6 my-1">Fuel Efficiency</p>
+                                    <p class="col-6 my-1">FAQ and Glossary</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-left border-bottom border-white card">
+                            <div class="card-header px-0 rounded-0" role="tab" id="headingOne6">
+                                <a data-toggle="collapse" href="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">
+                                    <h5 class="my-1 fz-12 font-weight-bold chevron-l">JEEP® LIFE</h5>
+                                </a>
+                            </div>
+                            <div id="collapseOne6" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne6">
+                                <div class="row my-3 card-body">
+                                    <p class="col-6 my-1">Jeep® Life Home</p>
+                                    <p class="col-6 my-1">Easter Jeep® Safari</p>
+                                    <p class="col-6 my-1">Jeep® Badge of Honor</p>
+                                    <p class="col-6 my-1">Jeep® Partnerships</p>
+                                    <p class="col-6 my-1">Jeep® Brand History</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-left border-bottom border-white card">
+                            <div class="card-header px-0 rounded-0" role="tab" id="headingOne7">
+                                <a data-toggle="collapse" href="#collapseOne7" aria-expanded="false" aria-controls="collapseOne7">
+                                    <h5 class="my-1 fz-12 font-weight-bold chevron-l">OWNERS</h5>
+                                </a>
+                            </div>
+                            <div id="collapseOne7" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne7">
+                                <div class="row my-3 card-body">
+                                    <p class="col-6 my-1">Jeep® Graphics Studio</p>
+                                    <p class="col-6 my-1">Owners Manuals and User Guides</p>
+                                    <p class="col-6 my-1">Vehicle Identification Number</p>
+                                    <p class="col-6 my-1">Warranty</p>
+                                    <p class="col-6 my-1">Jeep® Wave</p>
+                                    <p class="col-6 my-1">Recall Information</p>
+                                    <p class="col-6 my-1">EcoDiesel Settlement</p>
+                                    <p class="col-6 my-1">Jeep® Gear</p>
+                                    <p class="col-6 my-1">Jeep® DrivePlusSM Mastercard®</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-left border-bottom border-white card">
+                            <div class="card-header px-0 rounded-0" role="tab" id="headingOne8">
+                                <a data-toggle="collapse" href="#collapseOne8" aria-expanded="false" aria-controls="collapseOne8">
+                                    <h5 class="my-1 fz-12 font-weight-bold chevron-l">LEGAL</h5>
+                                </a>
+                            </div>
+                            <div id="collapseOne8" class="collapse fz-14" role="tabpanel" aria-labelledby="headingOne8">
+                                <div class="row my-3 card-body">
+                                    <p class="col-6 my-1">Privacy Policy</p>
+                                    <p class="col-6 my-1">Copyright</p>
+                                    <p class="col-6 my-1">Terms of Use</p>
+                                    <p class="col-6 my-1">Legal, Safety and Trademark Information</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="d-none d-sm-flex px-0 col-8 col-lg-10">
+                    
+                    <div class="w-50">
+                        <div class="container">
+                            <div class="row">
+                                <div class="column col-12 col-lg-6">
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">VEHICLES</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Wrangler</p>
+                                            <p class="my-2">Grand Cherokee</p>
+                                            <p class="my-2">Cherokee</p>
+                                            <p class="my-2">Renegade</p>
+                                            <p class="my-2">Compass</p>
+                                            <p class="my-2">Gladiator</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">COST</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">View Incentives & Offers</p>
+                                            <p class="my-2">National Incentives</p>
+                                            <p class="my-2">Calculate Payment</p>
+                                            <p class="my-2">Get a Quote</p>
+                                            <p class="my-2">Apply for Credit</p>
+                                            <p class="my-2">Get Prequalified</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column col-12 col-lg-6">
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">RESEARCH</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Adventure Reality</p>
+                                            <p class="my-2">Build & Price</p>
+                                            <p class="my-2">Compare Models</p>
+                                            <p class="my-2">Get a Brochure</p>
+                                            <p class="my-2">Sign Up for Updates</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">LOCATE</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Search New Inventory</p>
+                                            <p class="my-2">Find a Dealer</p>
+                                            <p class="my-2">Schedule a Test Drive</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-50">
+                        <div class="container">
+                            <div class="row">
+                                <div class="column col-12 col-lg-6">
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">CAPABILITY</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Trail Rated®</p>
+                                            <p class="my-2">4x4 Systems</p>
+                                            <p class="my-2">Towing</p>
+                                            <p class="my-2">Fuel Efficiency</p>
+                                            <p class="my-2">FAQ and Glossary</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">JEEP® LIFE</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Jeep® Life Home</p>
+                                            <p class="my-2">Easter Jeep® Safari</p>
+                                            <p class="my-2">Jeep® Badge of Honor</p>
+                                            <p class="my-2">Jeep® Partnerships</p>
+                                            <p class="my-2">Jeep® Brand History</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column col-12 col-lg-6">
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">OWNERS</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Jeep® Graphics Studio</p>
+                                            <p class="my-2">Owners Manuals and User Guides</p>
+                                            <p class="my-2">Vehicle Identification Number</p>
+                                            <p class="my-2">Warranty</p>
+                                            <p class="my-2">Jeep® Wave</p>
+                                            <p class="my-2">Recall Information</p>
+                                            <p class="my-2">EcoDiesel Settlement</p>
+                                            <p class="my-2">Jeep® Gear</p>
+                                            <p class="my-2">Jeep® DrivePlusSM Mastercard®</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card text-left">
+                                        <div class="card-header px-0">
+                                            <h5 class="my-2 fz-12 font-weight-bold">LEGAL</h5>
+                                        </div>
+                                        <div class="card-body fz-14 blackbg">
+                                            <p class="my-2">Privacy Policy</p>
+                                            <p class="my-2">Copyright</p>
+                                            <p class="my-2">Terms of Use</p>
+                                            <p class="my-2">Legal, Safety and Trademark Information</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-sm-4 col-lg-2 pt-3 px-0">
+                    <div class="d-flex flex-sm-column">
+                        <div class="w-100">
+                            <h5 class="fz-12 my-4 font-weight-bold">FOLLOW US</h5>
+                            <div id="icons">
+                                <i class="fab mr-2 mb-3 fa-facebook-square"></i>
+                                <i class="fab mr-2 mb-3 fa-twitter-square"></i>
+                                <i class="fab mr-2 mb-3 fa-instagram"></i>
+                                <i class="fab mr-2 mb-3 fa-google-plus-square"></i>
+                                <i class="fab mr-2 mb-3 fa-youtube-square"></i>
+                            </div>
+                        </div>
+                        <div class="w-100">
+                            <h5 class="fz-12 my-4 font-weight-bold">SUPPORT</h5>
+                            <img src="uconnect.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-left fz-10 px-0 py-4">
+                <div class="col-12 my-3 d-lg-flex justify-content-end p-0">
+                    <img class="d-none d-lg-inline mx-3 tag" src="fca.png">
+                    <img class="d-none d-lg-inline mx-3 mr-auto tag" src="chrysler-capital.png">
+                    <div class="d-inline mr-3">CHRYSLER</div>
+                    <div class="d-inline mr-3">DODGE</div>
+                    <div class="d-inline mr-3">JEEP<sub>®</sub></div>
+                    <div class="d-inline mr-3">RAM</div>
+                    <div class="d-inline mr-3">MOPAR<sub>®</sub></div>
+                    <div class="d-inline mr-3">FIAT<sub>®</sub></div>
+                    <div class="d-inline mr-3">ALFA ROMEO</div>
+                    <div class="d-inline mr-3">FCA FLEET</div>
+                </div>
+                <div class="col-12 stuff p-0">
+                    <p>©2019 FCA US LLC. All Rights Reserved. <br>
+                    Chrysler, Dodge, Jeep, Ram, Mopar and SRT are registered trademarks of FCA US LLC. <br>
+                    ALFA ROMEO and FIAT are registered trademarks of FCA Group Marketing S.p.A., used with permission.</p>
+                    
+                    <p>*MSRP excludes destination, taxes, title and registration fees. Starting at price refers to the base model, optional equipment not included. A more expensive model may be shown. Pricing and offers may change at any time without notification. To get full pricing details, see your dealer.</p>
+                    
+                    <p>FCA strives to ensure that its website is accessible to individuals with disabilities. Should you encounter an issue accessing any content on www.jeep.com, please contact our Customer Service Team at www.jeep.com/webselfservice/jeep/index.html or 1-877-IAMJEEP, for further assistance or to report a problem. Access to www.jeep.com is subject to FCA’s Privacy Policy and Terms of Use.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
 </html>
